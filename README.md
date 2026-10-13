@@ -6,6 +6,13 @@ Upload a photo of the bill and AI reads the items. Type plain-language rules
 like "Priya is vegetarian, Ravi did not drink water" and AI decides who shares
 which item. Then create a PayPal payment link for each person.
 
+## Live demo
+https://splitsmart-k5lo.onrender.com
+
+The demo runs on a free server, so the first load can take about a minute to
+wake up. Payments use the PayPal sandbox (test money only). Judges: test
+buyer login details are in the Devpost testing instructions.
+
 ## How it uses PayPal
 PayPal Orders API (sandbox): one checkout link per person for their share,
 and payment capture after approval.
