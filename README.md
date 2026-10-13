@@ -22,6 +22,10 @@ Gemini reads the bill photo into items and prices, and applies the group's
 rules to decide who shares each item. A person always reviews the ticked
 boxes before any payment link is created.
 
+## Sample bill for testing
+Download the sample receipt: [sample-bill.jpg](public/sample-bill.jpg)
+(Or open it on the live demo: https://splitsmart-k5lo.onrender.com/sample-bill.jpg)
+
 ## Run it yourself
 1. Install Node.js 20 or newer.
 2. Copy `.env.example` to `.env` and fill in your own PayPal sandbox keys
