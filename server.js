@@ -19,7 +19,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.static('public'));
 
 const PAYPAL_BASE = 'https://api-m.sandbox.paypal.com';
-
+const BASE_URL = (process.env.BASE_URL || 'http://localhost:3000').replace(/\/$/, '');
 async function getAccessToken() {
   const auth = Buffer.from(
     process.env.PAYPAL_CLIENT_ID + ':' + process.env.PAYPAL_CLIENT_SECRET
@@ -75,8 +75,8 @@ app.post('/api/create-order', async (req, res) => {
         payment_source: {
           paypal: {
             experience_context: {
-              return_url: 'http://localhost:3000/success',
-              cancel_url: 'http://localhost:3000/cancel',
+                           return_url: BASE_URL + '/success',
+              cancel_url: BASE_URL + '/cancel',
               user_action: 'PAY_NOW',
             },
           },
