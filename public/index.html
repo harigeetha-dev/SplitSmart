@@ -23,7 +23,7 @@
 
   <div id="itemsSection" style="display:none">
     <h3>2. Upload a bill photo (or add items by hand)</h3>
-    <input type="file" accept="image/*" onchange="scanBill(this)">
+    <input type="file" accept="image/*" onclick="this.value=''" onchange="scanBill(this)">
     <p id="scanStatus"></p>
 
     <div id="items"></div>
@@ -119,7 +119,7 @@
     });
   }
 
-  async function scanBill(input) {
+    async function scanBill(input) {
     const file = input.files[0];
     if (!file) return;
     const status = document.getElementById('scanStatus');
@@ -147,8 +147,8 @@
     } catch (e) {
       status.textContent = 'Could not read the bill. Try a clearer photo.';
     }
-    input.value = '';
-  }
+    }
+
   async function applyRules() {
     const rules = document.getElementById('rules').value.trim();
     const status = document.getElementById('rulesStatus');
